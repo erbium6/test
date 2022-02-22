@@ -1,18 +1,28 @@
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 
-// const elem1 = React.createElement('span', { children: 'Hello'})
-// const elem2 = React.createElement('span', { children: 'World'})
-const elem1 = <span>Hello</span>;
-const elem2 = <span>World</span>;
+const data = {
+  author: {
+    tag: 'Harry',
+    url: 'https://www.google.com.ua/',
+  },
+  title: 'Features. Art abstract',
+  price: 500,
+};
 
-// const element = React.createElement('div', { a: 5, b: 10, children: 'Hello World', });
+const painting = (
+  <div>
+    <img src="" alt="" width="480" />
+    <h2>{data.title}</h2>
+    <p>
+      Автор: <a href={data.author.url}>{data.author.tag}</a>
+    </p>
+    <p>Цена: {data.price} кредитов</p>
+    <p>Доступность: заканчивается или есть в наличии</p>
+    <button type="button">Добавить в корзину</button>
+  </div>
+);
 
-const jsxElement = <div>
-  { elem1 } 
-  { elem2 }
-</div>
-
-console.log(jsxElement)
+ReactDOM.render(painting, document.querySelector('#root'));
 
 // ReactDOM.render(element, document.querySelector('#root'));
 
